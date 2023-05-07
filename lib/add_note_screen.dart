@@ -60,11 +60,11 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     if (noteformkey.currentState!.validate()) {
-                      // notes.add(NoteModel(
-                      //     title: titleController.text,
-                      //     content: contentController.text));
-                      // DatabaseHelper()
-                      //     .insertNote(titleController.text, contentController.text);
+                      notes.add(NoteModel(
+                          title: titleController.text,
+                          content: contentController.text));
+                      DatabaseHelper().insertNote(
+                          titleController.text, contentController.text);
                       Navigator.pop(context, notes);
                     }
                   },

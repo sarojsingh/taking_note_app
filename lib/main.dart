@@ -9,7 +9,8 @@ import 'package:note_taking_app/home_screen.dart';
 //file: file_name
 
 void main() {
-  // DatabaseHelper().open();
+  WidgetsFlutterBinding.ensureInitialized();
+  DatabaseHelper().open();
   runApp(const NoteTakingApp());
 }
 
