@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:note_taking_app/add_note_screen.dart';
 import 'package:note_taking_app/models/note_model.dart';
 
+import 'helpers/database_helper.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
@@ -12,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<NoteModel> notes = [];
+  NoteModel note = DatabaseHelper().getNotes();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,11 +24,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         child: ListView.builder(
-          itemCount: notes.length,
+          //itemCount: notes.length,
+          itemCount: 1,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(notes[index].title),
-              subtitle: Text(notes[index].content),
+              // title: Text(notes[index].title),
+              // subtitle: Text(notes[index].content),
+              title: Text(note.title),
+              subtitle: Text(note.content),
             );
           },
         ),

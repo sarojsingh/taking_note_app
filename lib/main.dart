@@ -8,9 +8,9 @@ import 'package:note_taking_app/home_screen.dart';
 //method: methodName()
 //file: file_name
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  DatabaseHelper().open();
+  await DatabaseHelper().open();
   runApp(const NoteTakingApp());
 }
 
