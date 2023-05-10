@@ -43,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 MaterialPageRoute(
                   builder: (context) => AddNoteScreen(),
                 ));
-            setState(() {});
+            setState(() {
+              note = DatabaseHelper().getNotes();
+            });
           },
           icon: Icon(Icons.add)),
     );
